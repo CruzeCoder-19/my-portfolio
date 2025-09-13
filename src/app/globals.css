@@ -1,0 +1,165 @@
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.skill-logo:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f9fafb; /* subtle light gray */
+}
+
+.skill-logo:hover span.rounded-circle {
+  background-color: rgba(0, 0, 0, 0.08); /* darkens the icon badge a little */
+}
+.resume-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* resume button */
+}
+.hero-tech {
+  width: 44px;
+  height: 44px;
+  background: #f6f7f9;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.hero-tech:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  background-color: #eef1f5;
+}
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;                /* white icon */
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  text-decoration: none;
+}
+
+.contact-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 22px rgba(0,0,0,.2);
+  filter: brightness(1.05);
+}
+
+.contact-icon:focus-visible {
+  outline: 0;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.9),
+    0 0 0 6px rgba(13,110,253,.6); /* accessible focus ring */
+}
+body {
+  background: linear-gradient(135deg, #f9fafb, #e5f0ff);
+}
+/* ProfileMeta custom hover styling */
+#profile-meta .profile-meta-card {
+  background-color: #3286e0d8;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+#profile-meta .profile-meta-card:hover {
+  transform: translateY(-6px); /* lift up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* shadow */
+  background-color: #1f6fd4; /* slightly darker blue */
+}
+
+/* Make list items react on hover */
+#profile-meta li {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+#profile-meta li:hover {
+  color: #070707; /* gold text highlight */
+  transform: translateX(5px); /* small slide effect */
+}
+/* ===== Experience Section Styles ===== */
+#experience {
+  scroll-margin-top: 80px; /* smooth anchor scroll offset */
+}
+
+/* Wrapper for timeline */
+.exp-wrap {
+  position: relative;
+  isolation: isolate;
+}
+
+/* vertical line */
+.exp-wrap::before {
+  content: "";
+  position: absolute;
+  left: 14px;   /* aligns with badges */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(#a8cdfd, #3286e0); /* light to blue */
+  z-index: 0;
+  border-radius: 999px;
+}
+
+/* Experience cards */
+.exp-card {
+  position: relative;
+  z-index: 1;
+  background: #f3f8ff;
+  border: 1px solid #e6edf7;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.exp-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.15),
+              0 0 0 3px rgba(50, 134, 224, 0.15); /* subtle blue glow */
+}
+
+/* Bullet points */
+.exp-card li {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.exp-card li:hover {
+  color: #3286e0; /* highlight to theme */
+  transform: translateX(4px);
+}
+
+/* Badges */
+.exp-card .badge.text-bg-primary {
+  background-color: #3286e0 !important;
+  color: #fff;
+  font-weight: 500;
+}
+
+.exp-card .badge.bg-light {
+  background-color: #f3f8ff !important;
+  border: 1px solid #d0e3f9 !important;
+  font-weight: 500;
+}
+
+/* Tech stack pill badges */
+.exp-card .badge.rounded-pill {
+  background-color: #f8fbff;
+  border: 1px solid #d0e3f9;
+  color: #1f2937;
+  font-size: 0.85rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.exp-card .badge.rounded-pill:hover {
+  background-color: #3286e0;
+  border-color: #3286e0;
+  color: #fff;
+}
+
+/* Meta (date, location) */
+.exp-card .text-secondary {
+  color: #6b7280 !important; /* neutral gray */
+}
