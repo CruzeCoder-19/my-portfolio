@@ -1,7 +1,7 @@
-// src/components/ProfileMeta.jsx
-import { BsMortarboard } from "react-icons/bs";
+"use client";
+import { motion } from "framer-motion";
+import { BsMortarboard, BsLightbulb } from "react-icons/bs";
 
-// Default data lives here
 const DEFAULT_INTERESTS = [
   "Artificial Intelligence",
   "Scalable Web Applications",
@@ -13,6 +13,15 @@ const DEFAULT_EDUCATION = [
   { degree: "Higher Secondary", school: "D.A.V. Public School, Kalinganagar" },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+const colVariants = {
+  hidden: { opacity: 0, y: 24 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+};
+
 export default function ProfileMeta({
   interests = DEFAULT_INTERESTS,
   education = DEFAULT_EDUCATION,
@@ -20,37 +29,78 @@ export default function ProfileMeta({
   rightTitle = "Education",
 }) {
   return (
-    <section id="profile-meta" className="mb-5">
-      <div
-        className="profile-meta-card text-white rounded-3 p-4"
-        style={{ backgroundColor: "#3286e0d8" }} // custom background color
+    <section id="profile-meta" className="mb-5 profile-meta-section">
+      <div className="text-center mb-4">
+        <h2 className="h3 fw-bold">Interests &amp; Education</h2>
+        <p style={{ color: "var(--color-text-secondary)" }} className="mb-0">
+          A quick look into my interests and educational background.
+        </p>
+      </div>
+
+      <motion.div
+        className="row g-4"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-60px" }}
       >
-        <div className="row g-4 align-items-start">
-          <div className="col-md-6">
-            <h2 className="h5 mb-3">{leftTitle}</h2>
+        {/* Interests */}
+        <motion.div className="col-md-6" variants={colVariants}>
+          <div className="profile-meta-card-container shadow-sm p-4 h-100">
+            <h3 className="h5 fw-semibold mb-3 d-flex align-items-center gap-2">
+              <BsLightbulb size={18} color="var(--color-brand-primary)" />
+              {leftTitle}
+            </h3>
             <ul className="mb-0 ps-3">
               {interests.map((item, i) => (
-                <li key={i}>{item}</li>
+                <motion.li
+                  key={i}
+                  className="mb-2"
+                  style={{ color: "var(--color-text-secondary)" }}
+                  whileHover={{ x: 6, color: "var(--color-brand-primary)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {item}
+                </motion.li>
               ))}
             </ul>
           </div>
+        </motion.div>
 
-          <div className="col-md-6">
-            <h2 className="h5 mb-3">{rightTitle}</h2>
+        {/* Education */}
+        <motion.div className="col-md-6" variants={colVariants}>
+          <div className="profile-meta-card-container shadow-sm p-4 h-100">
+            <h3 className="h5 fw-semibold mb-3 d-flex align-items-center gap-2">
+              <BsMortarboard size={18} color="var(--color-brand-primary)" />
+              {rightTitle}
+            </h3>
             <ul className="list-unstyled mb-0">
               {education.map((e, i) => (
-                <li key={i} className="d-flex mb-3">
-                  <BsMortarboard className="me-2 flex-shrink-0 mt-1" aria-hidden="true" />
+                <motion.li
+                  key={i}
+                  className="d-flex mb-3"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <BsMortarboard
+                    className="me-3 flex-shrink-0 mt-1"
+                    color="var(--color-brand-primary)"
+                    size={18}
+                  />
                   <div>
-                    <div className="fw-semibold">{e.degree}</div>
-                    <div className="small opacity-75">{e.school}</div>
+                    <div className="fw-semibold" style={{ color: "var(--color-text-primary)" }}>
+                      {e.degree}
+                    </div>
+                    <div className="small" style={{ color: "var(--color-text-secondary)" }}>
+                      {e.school}
+                    </div>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
