@@ -13,7 +13,7 @@ const NAV_LINKS = [
 ];
 
 const SOCIALS = [
-  { Icon: BsGithub,   href: "https://github.com",                                         label: "GitHub" },
+  { Icon: BsGithub,   href: "https://github.com/CruzeCoder-19",                            label: "GitHub" },
   { Icon: BsLinkedin, href: "https://www.linkedin.com/in/manabendra-bisoyi-cruzedev/",     label: "LinkedIn" },
   { Icon: BsEnvelope, href: "#contact",                                                    label: "Email" },
 ];

@@ -36,7 +36,7 @@ export default function Experience() {
         >
           {/* Header row */}
           <div className="d-flex align-items-start gap-3 mb-3">
-            <div className="exp-company-badge flex-shrink-0">TT</div>
+            <div className="exp-company-badge flex-shrink-0">DU</div>
             <div className="flex-grow-1">
               <h5 className="fw-bold mb-0" style={{ color: "var(--color-text-primary)" }}>
                 Junior Software Developer
@@ -44,7 +44,7 @@ export default function Experience() {
               <div className="d-flex flex-wrap gap-3 mt-1">
                 <span style={{ fontSize: "0.88rem", color: "var(--color-text-secondary)" }}
                   className="d-flex align-items-center gap-1">
-                  <BsBriefcase size={13} /> Triptales Commercial Pvt Ltd
+                  <BsBriefcase size={13} /> Dialurban
                 </span>
                 <span style={{ fontSize: "0.88rem", color: "var(--color-text-muted)" }}
                   className="d-flex align-items-center gap-1">

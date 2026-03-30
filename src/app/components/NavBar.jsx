@@ -85,7 +85,7 @@ export default function NavBar() {
       {/* Right controls */}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <a
-          href="/Manabendra_2025.pdf"
+          href="/Manabendra_2026.docx"
           download
           className="d-none d-lg-inline-flex"
           style={{

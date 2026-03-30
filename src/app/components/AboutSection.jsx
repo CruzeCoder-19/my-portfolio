@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STATS = [
-  { target: 1,  suffix: "+", label: "Year Experience" },
-  { target: 3,  suffix: "+", label: "Projects Built" },
-  { target: 2,  suffix: "",  label: "Certifications" },
+  { target: 2,  suffix: "+", label: "Year Experience" },
+  { target: 30,  suffix: "+", label: "Projects Built" },
+  { target: 5,  suffix: "",  label: "Certifications" },
 ];
 
 function AnimatedCounter({ target, suffix, label, active }) {

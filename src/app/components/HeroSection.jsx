@@ -123,7 +123,7 @@ export default function HeroSection() {
           </motion.button>
           <motion.a
             className="hero-cta-btn outline"
-            href="/Manabendra_2025.pdf"
+            href="/Manabendra_2026.docx"
             download
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
@@ -138,7 +138,7 @@ export default function HeroSection() {
           className="d-flex justify-content-center gap-3"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/CruzeCoder-19"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-social-link"
@@ -148,7 +148,7 @@ export default function HeroSection() {
             <BsGithub />
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/manabendra-bisoyi-cruzedev/"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-social-link"

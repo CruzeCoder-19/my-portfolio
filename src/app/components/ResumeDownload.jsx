@@ -36,8 +36,8 @@ export default function ResumeDownload() {
               <div className="col-md-4 d-flex justify-content-md-end justify-content-start">
                 <motion.a
                   className="btn resume-btn-primary d-inline-flex align-items-center justify-content-center w-100 w-md-auto"
-                  href="/Manabendra_2025.pdf"
-                  download="Manabendra_Bisoyi_Resume.pdf"
+                  href="/Manabendra_2026.docx"
+                  download="Manabendra_Bisoyi_Resume.docx"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
                 >
