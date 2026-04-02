@@ -5,23 +5,22 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const PROJECTS = [
   {
-    title: "DialUrban Matrimony",
-    desc: "Full-stack matrimony module with profile creation, OTP auth, subscriptions, and photo management.",
+    title: "Dialurbano Property",
+    desc: "Full-stack property listing platform with admin panel, blogs, enquiry form, filters, property details, and user enquiry tracking.",
     stack: ["Next.js", "React-Bootstrap", "Node.js", "PostgreSQL", "JWT"],
-    image: "/projects/matrimony.jpg",
-    live: "https://your-live-url.com",
-    code: "https://github.com/your/repo",
+    image: "/projects/property.png",
+    live: "https://www.duproperty.in/",
     type: "Full-Stack",
     featured: true,
   },
   {
-    title: "Tiny-Link URL Shortener",
-    desc: "Short URLs with analytics and custom slugs. Deployed on Vercel + Neon.",
-    stack: ["Next.js", "NeonDB", "Prisma"],
-    image: "/projects/tiny-link.jpg",
-    live: "https://your-live-url.com",
-    code: "https://github.com/your/repo",
-    type: "Frontend",
+    title: "ID Card Generator",
+    desc: "ID Card Generator is a web application that allows users to generate ID cards for their organization.",
+    stack: ["Next.js", "NeonDB", "PostgreSQL", "JWT", "Next Auth"],
+    image: "/projects/id-card-generator.png",
+    live: "https://id-card-gen-pro.vercel.app/",
+    code: "https://github.com/CruzeCoder-19/IdCardGen-Pro",
+    type: "Full-Stack",
   },
   {
     title: "Property Listings",
@@ -40,7 +39,7 @@ const containerVariants = {
 };
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
 function ProjectCard({ p, featured }) {
@@ -70,16 +69,18 @@ function ProjectCard({ p, featured }) {
             >
               <FaExternalLinkAlt className="me-1" size={11} /> Live
             </a>
-            <a
-              href={p.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-sm"
-              style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "var(--radius-pill)" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <BsGithub className="me-1" size={13} /> Code
-            </a>
+            {p.code && (
+              <a
+                href={p.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-sm"
+                style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "var(--radius-pill)" }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <BsGithub className="me-1" size={13} /> Code
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -114,15 +115,17 @@ function ProjectCard({ p, featured }) {
           >
             <FaExternalLinkAlt className="me-1" size={11} /> Live
           </a>
-          <a
-            href={p.code}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-sm d-inline-flex align-items-center"
-            style={{ border: "1px solid var(--color-border)", color: "var(--color-text-secondary)" }}
-          >
-            <BsGithub className="me-1" size={13} /> Code
-          </a>
+          {p.code && (
+            <a
+              href={p.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sm d-inline-flex align-items-center"
+              style={{ border: "1px solid var(--color-border)", color: "var(--color-text-secondary)" }}
+            >
+              <BsGithub className="me-1" size={13} /> Code
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
