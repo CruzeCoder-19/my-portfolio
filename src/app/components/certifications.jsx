@@ -1,21 +1,9 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsDownload, BsAward } from "react-icons/bs";
-
-const CERTIFICATES = [
-  {
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    file: "/certificates/js-algo-cert.pdf",
-    thumb: "/certificates/js-algo-thumb.png",
-  },
-  {
-    title: "PostgreSQL for Developers",
-    issuer: "PostgreSQL Tutorial",
-    file: "/certificates/postgres-cert.pdf",
-    thumb: "/certificates/postgres-thumb.png",
-  },
-];
+import { FaArrowRight } from "react-icons/fa";
+import { HOMEPAGE_CERTS } from "../data/certifications";
 
 export default function Certifications() {
   return (
@@ -34,7 +22,7 @@ export default function Certifications() {
         viewport={{ once: true, margin: "-60px" }}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}
       >
-        {CERTIFICATES.map((cert) => (
+        {HOMEPAGE_CERTS.map((cert) => (
           <motion.div
             className="col-md-6"
             key={cert.title}
@@ -65,7 +53,7 @@ export default function Certifications() {
                   {cert.title}
                 </h3>
 
-                <div className="d-flex gap-2 mt-auto">
+                <div className="d-flex gap-2 mt-auto flex-wrap">
                   <a
                     href={cert.file}
                     target="_blank"
@@ -93,6 +81,13 @@ export default function Certifications() {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* View All CTA */}
+      <div className="d-flex justify-content-end mt-4">
+        <Link href="/certifications" className="view-all-btn">
+          View All Certifications <FaArrowRight size={12} />
+        </Link>
+      </div>
     </section>
   );
 }

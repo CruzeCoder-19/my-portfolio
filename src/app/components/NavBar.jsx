@@ -43,9 +43,14 @@ export default function NavBar() {
   }, []);
 
   function scrollTo(id) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
+    setMenuOpen(false); // start exit animation (220ms duration)
+    // Wait for the AnimatePresence exit animation to finish before scrolling.
+    // The exit transition is 0.22s — we add a small buffer (250ms total) so the
+    // overflow:hidden container is fully gone and cannot interfere with smooth scroll.
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 250);
   }
 
   return (

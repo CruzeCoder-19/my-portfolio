@@ -1,29 +1,21 @@
-"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { BsGithub } from "react-icons/bs";
-import { FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
-import { HOMEPAGE_PROJECTS } from "../data/projects";
+import { BsGithub, BsArrowLeft } from "react-icons/bs";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { PROJECTS } from "../data/projects";
 
-const containerVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-};
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+export const metadata = {
+  title: "All Projects – Manabendra Bisoyi | Full-Stack Developer",
+  description:
+    "Browse all full-stack projects built by Manabendra Bisoyi using Next.js, Node.js, PostgreSQL and more.",
 };
 
 function ProjectCard({ p, featured }) {
   return (
-    <motion.article
+    <article
       className={`card h-100 shadow-sm project-card${featured ? " project-card-featured" : ""}`}
-      variants={cardVariants}
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 280, damping: 22 }}
       aria-label={p.title}
     >
-      {/* Thumbnail with hover overlay */}
+      {/* Thumbnail */}
       <div className={`project-thumb${featured ? " ratio ratio-21x9" : " ratio ratio-16x9"}`}>
         <img src={p.image} alt={`${p.title} preview`} loading="lazy" />
 
@@ -37,8 +29,12 @@ function ProjectCard({ p, featured }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-sm"
-                style={{ background: "#fff", color: "#111", fontWeight: 600, borderRadius: "var(--radius-pill)" }}
-                onClick={(e) => e.stopPropagation()}
+                style={{
+                  background: "#fff",
+                  color: "#111",
+                  fontWeight: 600,
+                  borderRadius: "var(--radius-pill)",
+                }}
               >
                 <FaExternalLinkAlt className="me-1" size={11} /> Live
               </a>
@@ -49,8 +45,12 @@ function ProjectCard({ p, featured }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-sm"
-                style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "var(--radius-pill)" }}
-                onClick={(e) => e.stopPropagation()}
+                style={{
+                  background: "rgba(255,255,255,0.15)",
+                  color: "#fff",
+                  border: "1px solid rgba(255,255,255,0.4)",
+                  borderRadius: "var(--radius-pill)",
+                }}
               >
                 <BsGithub className="me-1" size={13} /> Code
               </a>
@@ -63,20 +63,33 @@ function ProjectCard({ p, featured }) {
         <div className="d-flex justify-content-between align-items-center mb-2">
           <small style={{ color: "var(--color-text-muted)", fontSize: "0.78rem" }}>{p.type}</small>
           {featured && (
-            <span style={{
-              fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em",
-              color: "var(--color-brand-primary)", textTransform: "uppercase",
-            }}>
+            <span
+              style={{
+                fontSize: "0.7rem",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                color: "var(--color-brand-primary)",
+                textTransform: "uppercase",
+              }}
+            >
               Featured
             </span>
           )}
         </div>
 
-        <h3 className="h6 mb-2" style={{ color: "var(--color-text-primary)" }}>{p.title}</h3>
+        <h2 className="h6 mb-2" style={{ color: "var(--color-text-primary)" }}>
+          {p.title}
+        </h2>
+
+        <p style={{ color: "var(--color-text-secondary)", fontSize: "0.88rem", lineHeight: 1.6 }}>
+          {p.desc}
+        </p>
 
         <div className="d-flex flex-wrap gap-1 mb-3">
           {p.stack.map((s) => (
-            <span key={s} className="badge rounded-pill project-tag">{s}</span>
+            <span key={s} className="badge rounded-pill project-tag">
+              {s}
+            </span>
           ))}
         </div>
 
@@ -97,55 +110,54 @@ function ProjectCard({ p, featured }) {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-sm d-inline-flex align-items-center"
-              style={{ border: "1px solid var(--color-border)", color: "var(--color-text-secondary)" }}
+              style={{
+                border: "1px solid var(--color-border)",
+                color: "var(--color-text-secondary)",
+              }}
             >
               <BsGithub className="me-1" size={13} /> Code
             </a>
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
-export default function Projects() {
-  const [featured, ...rest] = HOMEPAGE_PROJECTS;
+export default function AllProjectsPage() {
+  const featured = PROJECTS.find((p) => p.featured);
+  const rest = PROJECTS.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="mb-5" aria-labelledby="projects-title">
-      <div className="text-center mb-4">
-        <h2 id="projects-title" className="h3 fw-bold">Projects</h2>
+    <main className="container py-5">
+      {/* Breadcrumb */}
+      <Link href="/#projects" className="all-page-back-link mb-4 d-inline-flex align-items-center gap-2">
+        <BsArrowLeft size={15} /> Back to Portfolio
+      </Link>
+
+      {/* Page header */}
+      <div className="text-center mb-5">
+        <h1 className="h2 fw-bold">All Projects</h1>
         <p style={{ color: "var(--color-text-secondary)" }} className="mb-0">
-          A few real-world modules I&apos;ve built using Next.js, Node.js and PostgreSQL.
+          Every real-world application I&apos;ve built — from full-stack SaaS to property platforms.
         </p>
       </div>
 
-      <motion.div
-        className="row g-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-60px" }}
-      >
-        {/* Featured card — full width */}
-        <div className="col-12">
+      {/* Featured card — full width */}
+      {featured && (
+        <div className="mb-4">
           <ProjectCard p={featured} featured />
         </div>
+      )}
 
-        {/* Remaining cards */}
+      {/* Remaining cards — 1 col → 2 col → 3 col */}
+      <div className="row g-4">
         {rest.map((p) => (
-          <div className="col-md-6" key={p.title}>
+          <div className="col-12 col-sm-6 col-lg-4" key={p.title}>
             <ProjectCard p={p} />
           </div>
         ))}
-      </motion.div>
-
-      {/* View All CTA */}
-      <div className="d-flex justify-content-end mt-4">
-        <Link href="/projects" className="view-all-btn">
-          View All Projects <FaArrowRight size={12} />
-        </Link>
       </div>
-    </section>
+    </main>
   );
 }

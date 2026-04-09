@@ -768,6 +768,49 @@ a:hover { filter: brightness(.9); text-decoration: none; }
   box-shadow: var(--shadow-lg);
 }
 
+/* ── "View All" CTA — bottom-right of homepage sections ── */
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-brand-primary);
+  color: var(--color-brand-primary);
+  background: transparent;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+}
+.view-all-btn:hover {
+  background: var(--color-brand-primary);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Back breadcrumb on /projects and /certifications pages */
+.all-page-back-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  padding: 6px 0;
+}
+.all-page-back-link:hover { color: var(--color-brand-primary); }
+
+/* Responsive: keep "View All" row from overflowing on very small screens */
+@media (max-width: 375px) {
+  .view-all-btn { font-size: 0.82rem; padding: 6px 14px; }
+}
+
 /* =========================================================
    RESUME
 ========================================================= */
