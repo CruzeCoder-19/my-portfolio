@@ -34,6 +34,15 @@ export const PROJECTS = [
     code: "https://github.com/CruzeCoder-19/invoiceflow",
     type: "Full-Stack",
   },
+  {
+    title: "Windows 11 Portfolio",
+    desc: "A functional Windows-inspired portfolio website featuring state-driven UI, draggable components, and an integrated project explorer.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/projects/windows-portfolio.png",
+    live: "https://windofolio.netlify.app/",
+    code: "https://github.com/CruzeCoder-19/windows-portfolio",
+    type: "Frontend",
+  },
 ];
 
 /** Projects shown on the homepage (featured first + next non-featured). */
