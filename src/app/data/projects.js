@@ -28,7 +28,7 @@ export const PROJECTS = [
   {
     title: "InvoiceDo",
     desc: "Production-ready SaaS invoice generator with PDF export, dashboard analytics, and multi-provider authentication.",
-    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Neon", "NextAuth", "Tailwind CSS"],
     image: "/projects/InvoiceDo.png",
     live: "https://invoicedo.netlify.app/",
     code: "https://github.com/CruzeCoder-19/invoiceflow",

@@ -8,6 +8,12 @@
  */
 export const CERTIFICATES = [
   {
+    title: "Claude Code In Action",
+    issuer: "Anthropic",
+    file: "/certificates/CCA.pdf",
+    thumb: "/certificates/CCA.png",
+  },
+  {
     title: "Full Stack Development",
     issuer: "My Captain",
     file: "/certificates/Fullstack.pdf",
