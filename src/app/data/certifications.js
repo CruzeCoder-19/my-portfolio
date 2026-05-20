@@ -26,6 +26,12 @@ export const CERTIFICATES = [
     thumb: "/certificates/GUVI.png",
   },
   {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    file: "/certificates/C101.pdf",
+    thumb: "/certificates/C101.png",
+  },
+  {
     title: "Web Development",
     issuer: "My Captain",
     file: "/certificates/Web Development.pdf",

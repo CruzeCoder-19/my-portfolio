@@ -39,7 +39,7 @@ export default function Experience() {
             <div className="exp-company-badge flex-shrink-0">DU</div>
             <div className="flex-grow-1">
               <h5 className="fw-bold mb-0" style={{ color: "var(--color-text-primary)" }}>
-                Junior Software Developer
+                Full-Stack Developer
               </h5>
               <div className="d-flex flex-wrap gap-3 mt-1">
                 <span style={{ fontSize: "0.88rem", color: "var(--color-text-secondary)" }}

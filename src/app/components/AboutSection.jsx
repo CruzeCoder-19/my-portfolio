@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { BsGeoAlt, BsLightningCharge, BsWrench } from "react-icons/bs";
 
 const STATS = [
   { target: 2,  suffix: "+", label: "Year Experience" },
@@ -44,7 +45,7 @@ export default function AboutSection() {
         </p>
       </div>
 
-      <div className="row g-4 align-items-center">
+      <div className="row g-4 align-items-start">
         {/* Left: bio text */}
         <motion.div
           className="col-md-6"
@@ -54,17 +55,43 @@ export default function AboutSection() {
         >
           <div className="about-card p-4 p-md-5 h-100">
             <p className="about-text mb-3">
-              Hi, I&apos;m a Junior Software Developer at Triptales, working on DialUrban,
-              a platform with Property, Job and Matrimony modules. I build both the
-              frontend and the backend — creating responsive UIs with Next.js and
-              React-Bootstrap, and developing secure API routes that connect to a
-              PostgreSQL database.
+              Hi, I&apos;m Manabendra — a Full-Stack Developer with 2+ years of experience
+              building production-ready web applications using Next.js, TypeScript, Node.js,
+              and PostgreSQL.
             </p>
-            <p className="about-text mb-0">
-              I enjoy solving real problems through clean and scalable code. I love
-              learning new tools, improving UI design, and making development fast
-              and enjoyable.
+            <p className="about-text mb-3">
+              I&apos;ve shipped 30+ projects end-to-end — from a live property listing
+              platform with admin panel and enquiry tracking, to a SaaS invoice generator
+              with PDF export and multi-provider auth, to custom dashboards and ID management
+              systems. Every project I take on is built the same way: clean architecture,
+              type-safe APIs, secure authentication, and code that&apos;s easy to maintain
+              six months later.
             </p>
+            <p className="fw-bold mb-2 mt-2" style={{ color: "var(--color-text-primary)" }}>
+              What I bring to the table:
+            </p>
+            <ul className="about-bullet-list mb-3">
+              <li className="about-bullet-item mb-2">
+                <span><strong style={{ color: "var(--color-text-primary)" }}>End-to-end ownership</strong>
+                <span className="about-text"> — UI, API, database, auth, deployment. One developer, fewer handoffs, faster shipping.</span></span>
+              </li>
+              <li className="about-bullet-item mb-2">
+                <span><strong style={{ color: "var(--color-text-primary)" }}>Modern stack expertise</strong>
+                <span className="about-text"> — Next.js (App Router), React, TypeScript, Prisma, PostgreSQL, Tailwind CSS, NextAuth.</span></span>
+              </li>
+              <li className="about-bullet-item">
+                <span><strong style={{ color: "var(--color-text-primary)" }}>Engineering that lasts</strong>
+                <span className="about-text"> — secure REST APIs, optimized SQL queries, proper auth flows, and dashboards that actually scale.</span></span>
+              </li>
+            </ul>
+            <div className="about-exploring">
+              <span className="about-exploring-label">Currently exploring:</span>
+              <span className="about-exploring-tags">
+                <span className="about-exploring-tag">AWS Solutions Architect</span>
+                <span className="about-exploring-tag">System Design</span>
+                <span className="about-exploring-tag">Advanced PostgreSQL</span>
+              </span>
+            </div>
           </div>
         </motion.div>
 
@@ -81,13 +108,49 @@ export default function AboutSection() {
               Manabendra Bisoyi
             </div>
             <div className="mb-3" style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>
-              Junior Software Developer · Triptales
+              Full-Stack Developer · Triptales
             </div>
             <div className="d-flex gap-2 justify-content-center flex-wrap">
               {STATS.map((s) => (
                 <AnimatedCounter key={s.label} {...s} active={inView} />
               ))}
             </div>
+          </div>
+
+          {/* Availability status card */}
+          <div className="about-availability-card mt-3">
+            <div className="avail-row mb-2">
+              <span className="avail-pulse-dot" />
+              <span className="fw-bold" style={{ color: "var(--color-text-primary)" }}>
+                Available for Freelance
+              </span>
+            </div>
+            <div className="avail-row mb-2">
+              <BsGeoAlt size={14} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} />
+              <span>Bhubaneswar, India · Remote-friendly</span>
+            </div>
+            <div className="avail-row mb-2">
+              <BsLightningCharge size={14} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} />
+              <span>Avg response: under 24 hours</span>
+            </div>
+            <div className="avail-row">
+              <BsWrench size={14} style={{ color: "var(--color-text-muted)", flexShrink: 0 }} />
+              <span>Currently building: SaaS &amp; E-commerce platforms</span>
+            </div>
+          </div>
+
+          {/* CTA card */}
+          <div className="about-cta-card mt-3">
+            <div className="about-cta-heading mb-2">
+              Let&apos;s build something together
+            </div>
+            <p className="about-cta-text mb-3">
+              Open to freelance projects and full-time opportunities — MVPs, SaaS
+              products, admin dashboards, or custom backends.
+            </p>
+            <a href="#contact" className="about-cta-button">
+              Let&apos;s Talk →
+            </a>
           </div>
         </motion.div>
       </div>

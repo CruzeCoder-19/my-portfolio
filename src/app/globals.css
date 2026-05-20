@@ -466,6 +466,138 @@ a:hover { filter: brightness(.9); text-decoration: none; }
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--color-text-secondary);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.about-bullet-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+.about-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.about-bullet-item::before {
+  content: "•";
+  color: var(--color-brand-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 0.1em;
+}
+
+/* About availability card */
+.about-availability-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  transition: background var(--transition-slow);
+}
+.avail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+}
+.avail-pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: avail-pulse 2s ease-in-out infinite;
+}
+@keyframes avail-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.55); opacity: 0.55; }
+}
+
+/* About CTA card */
+.about-cta-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: background var(--transition-slow), border-color var(--transition-slow);
+}
+.about-cta-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+.about-cta-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.about-cta-button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-brand-primary);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+  min-height: 44px;
+  line-height: 1.4;
+}
+.about-cta-button:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+  color: #ffffff;
+  text-decoration: none;
+}
+.about-cta-button:active {
+  transform: translateY(0);
+}
+
+/* About exploring tags */
+.about-exploring {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.5rem;
+}
+.about-exploring-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+.about-exploring-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.about-exploring-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-brand-primary);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+[data-theme="dark"] .about-exploring-tag {
+  background: rgba(59, 130, 246, 0.18);
 }
 
 /* About avatar card */

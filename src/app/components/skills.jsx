@@ -85,7 +85,7 @@ export default function Skills() {
       <div className="text-center mb-4">
         <h2 id="skills-title" className="h3 fw-bold">Skills</h2>
         <p style={{ color: "var(--color-text-secondary)" }} className="mb-0">
-          Frontend, backend and database skills I use every day on DialUrban.
+          Frontend, backend and database skills I use to ship production-ready applications.
         </p>
       </div>
 
