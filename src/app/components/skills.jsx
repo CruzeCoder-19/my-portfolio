@@ -19,7 +19,7 @@ const SECTIONS = [
       { name: "JavaScript (ES6+)",  iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: "Advanced" },
       { name: "HTML5",              iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",           level: "Advanced" },
       { name: "CSS3",               iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",             level: "Intermediate" },
-      { name: "TypeScript",         Icon: SiTypescript,  color: "#3178C6", level: "Intermediate" },
+      { name: "TypeScript",         Icon: SiTypescript,  color: "#3178C6", level: "Advanced" },
       { name: "Tailwind CSS",       Icon: SiTailwindcss, color: "#06B6D4", level: "Intermediate" },
     ],
   },
@@ -40,7 +40,7 @@ const SECTIONS = [
     subtitle: "Data modelling, debugging & collab.",
     items: [
       { name: "PostgreSQL",         iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", level: "Intermediate" },
-      { name: "SQL Optimization",   iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", level: "Beginner" },
+      { name: "SQL Optimization",   iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", level: "Intermediate" },
       { name: "GitHub",             Icon: SiGithub,   color: "var(--color-text-primary)", level: "Advanced" },
       { name: "Postman",            Icon: SiPostman,  color: "#FF6C37",                   level: "Intermediate" },
       { name: "Neon DB",            Icon: FaDatabase, color: "#00E5CC",                   level: "Intermediate" },

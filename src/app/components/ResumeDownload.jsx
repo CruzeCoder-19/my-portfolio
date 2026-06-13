@@ -30,14 +30,14 @@ export default function ResumeDownload() {
                   One-page overview of my experience with Next.js, React.js, Node.js
                   and PostgreSQL, used for building the DialUrban platform.
                 </p>
-                <small style={{ color: "var(--color-text-muted)" }}>Updated for 2025 · PDF format</small>
+                <small style={{ color: "var(--color-text-muted)" }}>Updated for 2026 · PDF format</small>
               </div>
 
               <div className="col-md-4 d-flex justify-content-md-end justify-content-start">
                 <motion.a
                   className="btn resume-btn-primary d-inline-flex align-items-center justify-content-center w-100 w-md-auto"
-                  href="/Manabendra_2026.docx"
-                  download="Manabendra_Bisoyi_Resume.docx"
+                  href="/Manabendra_Bisoyi_2026.pdf"
+                  download="Manabendra_Bisoyi_Resume.pdf"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
                 >

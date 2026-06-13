@@ -90,7 +90,7 @@ export default function NavBar() {
       {/* Right controls */}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <a
-          href="/Manabendra_2026.docx"
+          href="/Manabendra_Bisoyi_2026.pdf"
           download
           className="d-none d-lg-inline-flex"
           style={{
@@ -137,7 +137,7 @@ export default function NavBar() {
               </button>
             ))}
             <a
-              href="/Manabendra_2025.pdf"
+              href="/Manabendra_Bisoyi_2026.pdf"
               download
               style={{
                 display: "flex", alignItems: "center", gap: 6, marginTop: 12,

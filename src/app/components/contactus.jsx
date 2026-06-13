@@ -58,7 +58,7 @@ export default function ContactUs() {
       <div className="text-center mb-4">
         <h2 id="contact-title" className="h3 fw-bold">Let&apos;s Work Together</h2>
         <p style={{ color: "var(--color-text-secondary)" }} className="mt-2">
-          Have a project, job opportunity, or idea? Drop a message and I&apos;ll get back to you.
+          Have a product to build or a feature to ship?  Drop a message and I&apos;ll get back to you.
         </p>
       </div>
 

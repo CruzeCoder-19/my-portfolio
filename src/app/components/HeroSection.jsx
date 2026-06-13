@@ -105,7 +105,7 @@ export default function HeroSection() {
 
         {/* Tagline */}
         <motion.p variants={itemVariants} className="hero-tagline mb-4">
-          Turning ideas into clean, scalable and user-friendly applications.
+          I build full-stack SaaS products for startups — database to deployment, solo.
         </motion.p>
 
         {/* CTA buttons */}
@@ -123,7 +123,7 @@ export default function HeroSection() {
           </motion.button>
           <motion.a
             className="hero-cta-btn outline"
-            href="/Manabendra_2026.docx"
+            href="/Manabendra_Bisoyi_2026.pdf"
             download
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}

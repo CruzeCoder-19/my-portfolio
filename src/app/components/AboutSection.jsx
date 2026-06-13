@@ -6,7 +6,7 @@ import { BsGeoAlt, BsLightningCharge, BsWrench } from "react-icons/bs";
 const STATS = [
   { target: 2,  suffix: "+", label: "Year Experience" },
   { target: 30,  suffix: "+", label: "Projects Built" },
-  { target: 5,  suffix: "",  label: "Certifications" },
+  { target: 5,  suffix: "+",  label: "Certifications" },
 ];
 
 function AnimatedCounter({ target, suffix, label, active }) {
@@ -85,7 +85,7 @@ export default function AboutSection() {
               </li>
             </ul>
             <div className="about-exploring">
-              <span className="about-exploring-label">Currently exploring:</span>
+              <span className="about-exploring-label">Currently building with:</span>
               <span className="about-exploring-tags">
                 <span className="about-exploring-tag">AWS Solutions Architect</span>
                 <span className="about-exploring-tag">System Design</span>
@@ -108,7 +108,7 @@ export default function AboutSection() {
               Manabendra Bisoyi
             </div>
             <div className="mb-3" style={{ fontSize: "0.9rem", color: "var(--color-text-muted)" }}>
-              Full-Stack Developer · Triptales
+              Full-Stack Developer · Dialurban
             </div>
             <div className="d-flex gap-2 justify-content-center flex-wrap">
               {STATS.map((s) => (
